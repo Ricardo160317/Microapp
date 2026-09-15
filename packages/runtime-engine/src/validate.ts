@@ -1,4 +1,4 @@
-const TIPOS_VALIDOS = ["texto", "numero", "booleano", "fecha", "telefono", "moneda"];
+const TIPOS_VALIDOS = ["texto", "numero", "booleano", "fecha", "telefono", "moneda", "identificador", "fecha_hora"];
 
 export function validateBlueprint(blueprint: any): { valido: boolean; errores: string[] } {
   const errores: string[] = [];
@@ -35,6 +35,16 @@ export function validateBlueprint(blueprint: any): { valido: boolean; errores: s
           }
           if (campo.obligatorio === undefined) errores.push(`Tabla ${i}, campo ${j}: falta 'obligatorio'.`);
         });
+
+        const etiquetaTabla = tabla.nombre || `#${i}`;
+        const primero = tabla.campos[0];
+        const ultimo = tabla.campos[tabla.campos.length - 1];
+        if (!primero || primero.nombre !== "id" || primero.tipo !== "identificador") {
+          errores.push(`Tabla '${etiquetaTabla}': el primer campo debe ser 'id' de tipo 'identificador'.`);
+        }
+        if (!ultimo || ultimo.nombre !== "creado_en" || ultimo.tipo !== "fecha_hora") {
+          errores.push(`Tabla '${etiquetaTabla}': el ultimo campo debe ser 'creado_en' de tipo 'fecha_hora'.`);
+        }
       }
     });
   }
