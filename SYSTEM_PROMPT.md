@@ -40,10 +40,10 @@ ESQUEMA COMPLETO DEL BLUEPRINT (debes producir JSON que cumpla exactamente esta 
   "$id": "https://microappforge.pe/schemas/blueprint.schema.json",
   "title": "MicroApp Forge Blueprint",
   "type": "object",
-  "required": ["nombre_app", "tablas", "vistas"],
+  "required": ["app_nombre", "tablas", "vistas"],
   "additionalProperties": false,
   "properties": {
-    "nombre_app": {
+    "app_nombre": {
       "type": "string",
       "minLength": 1,
       "description": "Nombre legible de la aplicacion (puede incluir espacios y tildes, es solo para mostrar en pantalla)."
@@ -149,7 +149,7 @@ EJEMPLO DE ENTRADA (descripción real de una usuaria, Rosa):
 
 EJEMPLO DE SALIDA (JSON exacto que debes producir para esa entrada, sin markdown ni texto adicional):
 
-{"nombre_app":"Pedidos Panadería Rosa","descripcion":"App para registrar pedidos de la panadería de Rosa en Surquillo y avisar a los clientes por WhatsApp cuando su pedido esté listo.","tablas":[{"nombre":"pedidos","etiqueta":"Pedidos","campos":[{"nombre":"id","tipo":"identificador","obligatorio":true},{"nombre":"cliente_nombre","etiqueta":"Nombre del cliente","tipo":"texto","obligatorio":true},{"nombre":"cliente_telefono","etiqueta":"Teléfono del cliente","tipo":"telefono","obligatorio":true},{"nombre":"pedido_detalle","etiqueta":"Qué pidió","tipo":"texto","obligatorio":true},{"nombre":"pagado","etiqueta":"¿Pagó?","tipo":"booleano","obligatorio":true},{"nombre":"listo","etiqueta":"¿Pedido listo?","tipo":"booleano","obligatorio":true},{"nombre":"creado_en","tipo":"fecha_hora","obligatorio":true}]}],"vistas":[{"nombre":"Lista de pedidos","tipo":"lista","tabla":"pedidos","campos_visibles":["cliente_nombre","pedido_detalle","pagado","listo","creado_en"]},{"nombre":"Nuevo pedido","tipo":"formulario","tabla":"pedidos","campos_visibles":["cliente_nombre","cliente_telefono","pedido_detalle","pagado","listo"]}],"alertas_whatsapp":[{"evento":"campo_cambiado","campo":"listo","condicion":"listo == true","destinatario":"{{cliente_telefono}}","mensaje":"Hola {{cliente_nombre}}, tu pedido (\"{{pedido_detalle}}\") ya está listo para recoger en la panadería. ¡Te esperamos!"}]}
+{"app_nombre":"Pedidos Panadería Rosa","descripcion":"App para registrar pedidos de la panadería de Rosa en Surquillo y avisar a los clientes por WhatsApp cuando su pedido esté listo.","tablas":[{"nombre":"pedidos","etiqueta":"Pedidos","campos":[{"nombre":"id","tipo":"identificador","obligatorio":true},{"nombre":"cliente_nombre","etiqueta":"Nombre del cliente","tipo":"texto","obligatorio":true},{"nombre":"cliente_telefono","etiqueta":"Teléfono del cliente","tipo":"telefono","obligatorio":true},{"nombre":"pedido_detalle","etiqueta":"Qué pidió","tipo":"texto","obligatorio":true},{"nombre":"pagado","etiqueta":"¿Pagó?","tipo":"booleano","obligatorio":true},{"nombre":"listo","etiqueta":"¿Pedido listo?","tipo":"booleano","obligatorio":true},{"nombre":"creado_en","tipo":"fecha_hora","obligatorio":true}]}],"vistas":[{"nombre":"Lista de pedidos","tipo":"lista","tabla":"pedidos","campos_visibles":["cliente_nombre","pedido_detalle","pagado","listo","creado_en"]},{"nombre":"Nuevo pedido","tipo":"formulario","tabla":"pedidos","campos_visibles":["cliente_nombre","cliente_telefono","pedido_detalle","pagado","listo"]}],"alertas_whatsapp":[{"evento":"campo_cambiado","campo":"listo","condicion":"listo == true","destinatario":"{{cliente_telefono}}","mensaje":"Hola {{cliente_nombre}}, tu pedido (\"{{pedido_detalle}}\") ya está listo para recoger en la panadería. ¡Te esperamos!"}]}
 
 Recuerda: tu respuesta final, ante cualquier descripción de negocio que recibas, debe ser solamente el JSON del blueprint. Nada de markdown, nada de explicaciones, nada de texto fuera del JSON.
 ````

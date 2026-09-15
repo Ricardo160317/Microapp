@@ -21,10 +21,10 @@ Este documento define el **contrato de datos** para MicroApp Forge: la estructur
   "title": "MicroApp Forge Blueprint",
   "description": "Contrato de datos que describe una micro-aplicacion generada para una PYME peruana.",
   "type": "object",
-  "required": ["nombre_app", "tablas", "vistas"],
+  "required": ["app_nombre", "tablas", "vistas"],
   "additionalProperties": false,
   "properties": {
-    "nombre_app": {
+    "app_nombre": {
       "type": "string",
       "minLength": 1,
       "description": "Nombre legible de la aplicacion (puede incluir espacios y tildes, es solo para mostrar en pantalla)."
@@ -171,7 +171,7 @@ Rosa tiene una panadería en Surquillo y quiere registrar pedidos con el nombre 
 
 ```json
 {
-  "nombre_app": "Pedidos Panadería Rosa",
+  "app_nombre": "Pedidos Panadería Rosa",
   "descripcion": "App para registrar pedidos de la panadería de Rosa en Surquillo y avisar a los clientes por WhatsApp cuando su pedido esté listo.",
   "tablas": [
     {

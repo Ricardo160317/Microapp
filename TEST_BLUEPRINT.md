@@ -16,7 +16,7 @@ Hola, tengo una panadería en Surquillo. Quiero anotar los pedidos de mis client
 
 ```json
 {
-  "nombre_app": "Pedidos Panadería Rosa",
+  "app_nombre": "Pedidos Panadería Rosa",
   "descripcion": "App para registrar pedidos de la panadería de Rosa en Surquillo y avisar a los clientes por WhatsApp cuando su pedido esté listo.",
   "tablas": [
     {
