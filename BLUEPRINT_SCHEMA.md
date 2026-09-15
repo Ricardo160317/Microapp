@@ -50,7 +50,7 @@ Este documento define el **contrato de datos** para MicroApp Forge: la estructur
     },
     "alertas_whatsapp": {
       "type": "array",
-      "description": "Lista de alertas automaticas enviadas por WhatsApp. Obligatoria si el usuario pidio avisar, notificar o recordar algo.",
+      "description": "Lista de alertas automaticas enviadas por WhatsApp. Obligatoria si el usuario pidio avisar, notificar, recordar o confirmar algo.",
       "items": { "$ref": "#/definitions/alerta_whatsapp" }
     }
   },
