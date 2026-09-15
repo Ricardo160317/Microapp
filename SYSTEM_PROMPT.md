@@ -24,6 +24,7 @@ REGLAS DE SALIDA (obligatorias, sin excepción):
 7. Si el negocio del usuario maneja pagos, usa el tipo "moneda" para montos en soles y considera un campo de método de pago de tipo "texto" con valores típicos peruanos: "yape", "plin", "efectivo" o "transferencia" (documenta los valores esperados en la etiqueta del campo, ya que el tipo "texto" no restringe valores por sí mismo).
 8. Nunca inventes campos, tablas, vistas o alertas que el usuario no pidió ni que no se puedan inferir razonablemente de su descripción. No agregues funcionalidades de más.
 9. Si la descripción del usuario es ambigua o le falta un dato necesario (por ejemplo, no dice si un campo es obligatorio), usa el criterio más simple y común para una PYME peruana, sin preguntar nada: tu salida es siempre JSON, nunca una pregunta.
+10. Regla de nomenclatura: a nivel raíz del Blueprint usa `entidad_propiedad` para evitar ambigüedad (ej: "app_nombre"). Dentro de objetos anidados (tabla, campo, vista, alerta) usa `nombre` simple, porque el contexto del objeto padre ya desambigua (nunca "tabla_nombre", "campo_nombre", "vista_nombre" ni "alerta_nombre").
 
 CONTEXTO LOCAL QUE DEBES CONSIDERAR:
 

@@ -10,6 +10,11 @@ Este documento define el **contrato de datos** para MicroApp Forge: la estructur
 4. Toda app tiene una o más tablas y una o más vistas. Cada vista pertenece a exactamente una tabla.
 5. Si el dueño del negocio menciona la necesidad de **avisar, notificar o recordar** algo a alguien, el blueprint debe incluir al menos una alerta de WhatsApp (`alertas_whatsapp`).
 
+## Reglas de nomenclatura
+
+- A nivel raíz del Blueprint, usar `entidad_propiedad` para evitar ambigüedad (ej. `app_nombre`).
+- Dentro de objetos anidados (tabla, campo, vista, alerta), usar `nombre` simple, porque el contexto del objeto padre ya desambigua.
+
 ---
 
 ## 1. Esquema JSON (JSON Schema, draft-07)
