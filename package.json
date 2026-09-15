@@ -1,0 +1,11 @@
+{
+  "name": "microapp-forge",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0"
+  }
+}
