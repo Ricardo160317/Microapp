@@ -8,7 +8,7 @@ Este documento define el **contrato de datos** para MicroApp Forge: la estructur
 2. Toda tabla debe empezar con el campo `id` (tipo `identificador`) y terminar con el campo `creado_en` (tipo `fecha_hora`). Ambos son gestionados por el sistema: el usuario no los llena a mano.
 3. Los tipos de campo disponibles para el usuario son exactamente seis: `texto`, `numero`, `booleano`, `fecha`, `telefono`, `moneda`. Los tipos `identificador` y `fecha_hora` están reservados para `id` y `creado_en`.
 4. Toda app tiene una o más tablas y una o más vistas. Cada vista pertenece a exactamente una tabla.
-5. Si el dueño del negocio menciona la necesidad de **avisar, notificar o recordar** algo a alguien, el blueprint debe incluir al menos una alerta de WhatsApp (`alertas_whatsapp`).
+5. Si el dueño del negocio menciona la necesidad de **avisar, notificar, recordar o confirmar** algo a alguien, el blueprint debe incluir al menos una alerta de WhatsApp (`alertas_whatsapp`).
 
 ## Reglas de nomenclatura
 
