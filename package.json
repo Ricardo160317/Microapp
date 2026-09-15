@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"no tests yet\" && exit 0"
+    "test": "echo \"no tests yet\" && exit 0",
+    "probar": "tsx probar.ts"
   }
 }
